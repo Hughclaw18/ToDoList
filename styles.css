@@ -1,0 +1,278 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --background: #1c1c1c; /* Dark gray background */
+    --secondaryBackground: #2e2e2e; /* Light gray for secondary background */
+    --text: #ffd700; /* Gold text */
+    --gold: #ffd700; /* Gold color */
+    --gold-hover: #e6b800; /* Slightly darker gold for hover */
+    --gray: #c0c0c0; /* Light gray for accents */
+    --shadow: rgba(0, 0, 0, 0.25); /* Shadow for depth */
+}
+
+body {
+    background: url('background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: var(--text);
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 100px auto 0 auto;
+    max-width: 600px;
+    padding: 20px;
+    border-radius: 15px;
+    background: var(--secondaryBackground);
+    box-shadow: 0px 5px 20px var(--shadow);
+    position: relative;
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.stats-container {
+    padding: 30px;
+    border-radius: 10px;
+    border: 2px solid var(--gold);
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+    background: var(--secondaryBackground);
+    box-shadow: 0px 4px 12px var(--shadow);
+    animation: slideIn 0.8s ease-in-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.details h1 {
+    font-size: 24px;
+    color: var(--gold);
+    text-shadow: 1px 1px 5px var(--shadow);
+}
+
+#progressBar {
+    width: 100%;
+    height: 10px;
+    background-color: var(--gray);
+    border-radius: 5px;
+    margin-top: 20px;
+    overflow: hidden;
+}
+
+#progress {
+    width: 0;
+    height: 100%;
+    background: linear-gradient(90deg, var(--gold), var(--gray));
+    border-radius: 10px;
+    transition: width 0.4s ease-in-out;
+}
+
+#numbers {
+    width: 100px;
+    height: 100px;
+    background-color: var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 20px;
+    font-weight: bold;
+    box-shadow: 0px 5px 15px var(--shadow);
+    color: var(--background);
+}
+
+form {
+    margin-top: 50px;
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    animation: fadeInForm 0.6s ease-in-out;
+}
+
+@keyframes fadeInForm {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+input {
+    flex: 1;
+    padding: 12px 15px;
+    background: var(--secondaryBackground);
+    border: 2px solid var(--gold);
+    border-radius: 8px;
+    outline: none;
+    color: var(--text);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus {
+    border-color: var(--gray);
+    box-shadow: 0px 0px 8px var(--gray);
+}
+
+input::placeholder {
+    color: rgba(255, 215, 0, 0.7); /* Slightly transparent gold placeholder */
+}
+
+button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--gold);
+    color: var(--background);
+    font-size: 30px;
+    font-weight: bold;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0px 4px 8px var(--shadow);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: var(--gold-hover);
+    transform: scale(1.05);
+}
+
+button:focus {
+    outline: 2px solid var(--gray);
+    outline-offset: 2px;
+}
+
+.task-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 40px;
+    width: 100%;
+    list-style: none;
+    animation: fadeInTasks 0.6s ease;
+}
+
+@keyframes fadeInTasks {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.taskItem {
+    display: flex;
+    background-color: var(--secondaryBackground);
+    padding: 15px;
+    border-radius: 12px;
+    justify-content: space-between;
+    box-shadow: 0px 5px 10px var(--shadow);
+    transition: all 0.3s ease;
+}
+
+.taskItem:hover {
+    transform: scale(1.02);
+    box-shadow: 0px 6px 12px var(--shadow);
+}
+
+.task {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.task input {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.completed p {
+    text-decoration: line-through;
+    color: var(--gold);
+}
+
+.taskItem img {
+    width: 24px;
+    height: 24px;
+    margin: 0 10px;
+    cursor: pointer;
+    filter: drop-shadow(0px 2px 4px var(--shadow));
+    transition: transform 0.2s ease;
+}
+
+.taskItem img:hover {
+    transform: scale(1.1);
+}
+
+/* Confetti container styles */
+#confetti-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+.task small {
+    color: rgba(255, 215, 0, 0.7); /* A lighter gold color for the timestamp */
+    font-size: 12px;
+    display: block;
+    margin-top: 5px;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 15px;
+        margin: 40px auto;
+    }
+
+    input, button {
+        font-size: 14px;
+    }
+
+    #numbers {
+        width: 70px;
+        height: 70px;
+        font-size: 16px;
+    }
+}
