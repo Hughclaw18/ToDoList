@@ -1,0 +1,22 @@
+{
+    "name": "To Do App",
+    "short_name": "To-Do",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#000430",
+    "theme_color": "#171c48",
+    "description": "A To-Do list web app for keeping track of tasks.",
+    "icons": [
+      {
+        "src": "bin.png",
+        "sizes": "38x40",
+        "type": "image/png"
+      },
+      {
+        "src": "edit.png",
+        "sizes": "41x44",
+        "type": "image/png"
+      }
+    ]
+  }
+  
